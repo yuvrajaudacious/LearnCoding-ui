@@ -1,0 +1,35 @@
+.logo {
+    width: 20px;
+    height: inherit;
+}
+
+.header {
+    height: 55px;
+}
+
+.header2 {
+    height: 35px;
+}
+
+.menu {
+    text-decoration: none;
+    border-bottom: "none"
+}
+
+.home {
+    width: 50px;
+    height: 40px;
+    color: aliceblue;
+}
+
+.menu2 {
+    height: 40px;
+    background-color: rgb(59, 59, 148);
+    text-align: center;
+}
+
+.menuiteam {
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    font-size: 18px;
+}

@@ -1,11 +1,11 @@
-import Headers from "./Page/header";
 
 const App = () => {
   return (
     <div>
-      <Headers />
+      <h1>Hii. Wellcome Everyone</h1>
+      <h2>codewithyuvraj</h2>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

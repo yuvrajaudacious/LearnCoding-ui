@@ -1,0 +1,21 @@
+/* module.less */
+
+.customScrollbar {
+  overflow-y: auto;
+  overflow: hidden; /* Scroll bar ko chhupane ke liye */
+
+  max-height: 100vh;
+  scrollbar-width: thin; /* "auto" or "thin" to display scrollbar */
+}
+
+.customScrollbar::-webkit-scrollbar {
+  width: 20px; /* Width of the scrollbar */
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+  background: #921a1a; /* Track color */
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+  background: #ec0d0d; /* Thumb color */
+}

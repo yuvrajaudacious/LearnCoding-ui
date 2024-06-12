@@ -10,6 +10,7 @@ import {
   Row,
   Col,
   Skeleton,
+  message,
 } from "antd";
 import { SendOutlined, RobotOutlined, UserOutlined } from "@ant-design/icons";
 import styles from "./styles.module.less";
@@ -121,18 +122,34 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
     setInputValue("");
   };
 
-  const handleContactFormSubmit = () => {
-    contactForm
-      .validateFields()
-      .then((values) => {
+  const handleContactFormSubmit = async (values: any) => {
+    setIsContactFormLoading(true);
+    const formData = new FormData();
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("message", values.message);
+    formData.append("access_key", "25d739c9-22cc-4057-9948-1bbe8a482488");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        message.success({
+          content: "Form Submitted Successfully",
+          key: "updatable",
+          duration: 2,
+        });
         sendMessage(
-          `First Name: ${values.firstName}, Last Name: ${values.lastName}`,
+          `Name: ${values.name}, Email: ${values.email}, Message: ${values.message}`,
           "user"
         );
-
         setShowContactForm(false);
         setShowEmailForm(true);
-
         setTimeout(() => {
           setMessages((prevMessages) => [
             ...prevMessages,
@@ -144,10 +161,19 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
             },
           ]);
         }, 1000);
-      })
-      .catch((info) => {
-        console.log("Validate Failed:", info);
+      } else {
+        console.log("Error", data);
+        message.error({ content: data.message, key: "updatable", duration: 2 });
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      message.error({
+        content: "An error occurred",
+        key: "updatable",
+        duration: 2,
       });
+    }
+    setIsContactFormLoading(false);
   };
 
   function getCurrentTime() {
@@ -213,24 +239,12 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
                   onFinish={handleContactFormSubmit}
                 >
                   <Form.Item
-                    name="firstName"
-                    label="First Name"
+                    name="name"
+                    label="Name"
                     rules={[
                       {
                         required: true,
-                        message: "Please enter your first name",
-                      },
-                    ]}
-                  >
-                    <Input />
-                  </Form.Item>
-                  <Form.Item
-                    name="lastName"
-                    label="Last Name"
-                    rules={[
-                      {
-                        required: true,
-                        message: "Please enter your last name",
+                        message: "Please enter your name",
                       },
                     ]}
                   >
@@ -248,6 +262,18 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
                     ]}
                   >
                     <Input />
+                  </Form.Item>
+                  <Form.Item
+                    name="message"
+                    label="Message"
+                    rules={[
+                      {
+                        required: true,
+                        message: "Please enter your message",
+                      },
+                    ]}
+                  >
+                    <Input.TextArea />
                   </Form.Item>
                   <Form.Item>
                     <Button

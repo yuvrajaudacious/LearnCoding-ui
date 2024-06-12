@@ -2,6 +2,7 @@ import { DownOutlined } from "@ant-design/icons";
 import { Button, Dropdown, Layout, Menu } from "antd";
 import Search from "antd/es/transfer/search";
 import styles from "./styles.module.css";
+import logo from "../../../public/logo3.png";
 const { Header } = Layout;
 
 const HeaderComponent = () => {
@@ -18,9 +19,9 @@ const HeaderComponent = () => {
         <Header className={styles.header}>
           <div style={{ display: "flex", alignItems: "center" }}>
             <img
-              src="https://t3.ftcdn.net/jpg/03/92/80/46/360_F_392804645_tUQxo5EgPXvFGxn5OQguX1BiYlI6lCOV.jpg"
+            className={styles.logo}
+              src={logo}
               alt="Logo"
-              style={{ height: "31px", marginRight: "20px" }}
             />
             <Menu
               theme="light"

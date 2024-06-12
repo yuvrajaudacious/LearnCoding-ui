@@ -11,10 +11,6 @@ const Layout = () => {
     <div className={styles.customScrollbar}>
       <HeaderComponent />
       <Detail />
-      {/* <ContactForm /> */}
-      {/* <Progresss /> */}
-      {/* <Game />   */}
-      {/* <WebDevelopment /> */}
       <DevelopmentCourses />
       <CoursesSelect />
       <SelfDevelopment />

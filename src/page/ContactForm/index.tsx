@@ -14,7 +14,7 @@ export default function Contact() {
   const [showSuccessCard, setShowSuccessCard] = useState(false);
 
   const onFinish = async (values: ContactForm) => {
-    const [form] = useForm();
+    // const [form] = useForm();
     message.loading({ content: "Sending....", key: "updatable" });
 
     const formData = new FormData();
@@ -38,8 +38,8 @@ export default function Contact() {
           key: "updatable",
           duration: 2,
         });
-        // const form = document.querySelector("form");
-        form.resetFields();
+        const form = document.querySelector("form");
+        form.reset();
         setShowSuccessCard(true);
       } else {
         console.log("Error", data);

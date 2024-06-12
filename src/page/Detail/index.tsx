@@ -1,6 +1,7 @@
+import { Card, Flex } from "antd";
 import React from "react";
-import { Badge, Card, Flex, Space } from "antd";
 import styles from "./styles.module.less";
+
 const Detail: React.FC = () => (
   <Card className={styles.details}>
     <Flex justify="space-between">

@@ -1,26 +1,24 @@
-import { useState } from "react";
 import { Layout } from "antd";
-import { Editor } from "@monaco-editor/react";
 
 const { Header, Content } = Layout;
 
 const CodeEditor: React.FC = () => {
-  const [code, setCode] = useState<string>("");
+  // const [code, setCode] = useState<string>("");
 
-  const handleEditorChange = (value: string | undefined) => {
-    setCode(value || "");
-  };
+  // const handleEditorChange = (value: string | undefined) => {
+  //   setCode(value || "");
+  // };
 
   return (
     <Layout style={{ height: "100vh" }}>
       <Header style={{ color: "white" }}>My Code Editor</Header>
       <Content style={{ padding: "20px" }}>
-        <Editor
+        {/* <Editor
           height="90vh"
           defaultLanguage="javascript"
           defaultValue="// some comment"
           onChange={handleEditorChange}
-        />
+        /> */}
       </Content>
     </Layout>
   );

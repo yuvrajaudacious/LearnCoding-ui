@@ -1,6 +1,5 @@
-// Game.tsx
 import React, { useState } from "react";
-import { Button, Row, Col, message, Space, Card } from "antd";
+import { Button, Row, Col, message, Card } from "antd";
 import styles from "./styles.module.less"
 const Game: React.FC = () => {
   const [squares, setSquares] = useState<(string | null)[]>(

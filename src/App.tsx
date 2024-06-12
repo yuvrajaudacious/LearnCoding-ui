@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { FloatButton } from "antd";
 import {
   LoginOutlined,
   MoonOutlined,
   SettingFilled,
   WechatWorkOutlined,
 } from "@ant-design/icons";
-import Layout from "./Layout/Home";
+import { FloatButton } from "antd";
+import React, { useState } from "react";
 import Login from "./Auth/Login";
+import Layout from "./Layout/Home";
 import Chatbot from "./page/ChatBot";
 
 const App: React.FC = () => {

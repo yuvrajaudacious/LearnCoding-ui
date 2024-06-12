@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Form, Input, Button, message, Space, Card, Flex, Result } from "antd";
 import { MailOutlined, UserOutlined } from "@ant-design/icons";
+import { Button, Card, Flex, Form, Input, Result, Space, message } from "antd";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.less";
+import { useForm } from "antd/es/form/Form";
 
 export default function Contact() {
   interface ContactForm {
@@ -13,6 +14,7 @@ export default function Contact() {
   const [showSuccessCard, setShowSuccessCard] = useState(false);
 
   const onFinish = async (values: ContactForm) => {
+    const [form] = useForm();
     message.loading({ content: "Sending....", key: "updatable" });
 
     const formData = new FormData();
@@ -36,8 +38,8 @@ export default function Contact() {
           key: "updatable",
           duration: 2,
         });
-        const form = document.querySelector("form");
-        form.reset();
+        // const form = document.querySelector("form");
+        form.resetFields();
         setShowSuccessCard(true);
       } else {
         console.log("Error", data);

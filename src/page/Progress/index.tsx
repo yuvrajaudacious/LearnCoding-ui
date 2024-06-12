@@ -1,5 +1,4 @@
-import React from "react";
-import { Row, Col, Card, Progress, Divider } from "antd";
+import { Card, Col, Divider, Progress, Row } from "antd";
 
 const Progresss = () => {
   return (

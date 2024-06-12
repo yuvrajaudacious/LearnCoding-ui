@@ -1,15 +1,13 @@
-import React, { useState } from "react";
 import {
-  Steps,
   Button,
-  message,
-  Row,
-  Col,
   Card,
-  Space,
-  Typography,
+  Col,
   Flex,
+  Row,
+  Steps,
+  message
 } from "antd";
+import React, { useState } from "react";
 // import "antd/dist/antd.css";
 import styles from "./styles.module.less"; // Custom CSS for styling
 

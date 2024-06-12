@@ -1,15 +1,17 @@
-import React from "react";
-import { Layout, Card, Row, Col, Progress, Button, Tag } from "antd";
-import styles from "./styles.module.less";
-import Meta from "antd/es/card/Meta";
 import { ArrowRightOutlined, RiseOutlined } from "@ant-design/icons";
+import { Button, Card, Col, Layout, Row, Tag } from "antd";
+import Meta from "antd/es/card/Meta";
+import React from "react";
+import styles from "./styles.module.less";
 const { Header, Content, Footer } = Layout;
+
 interface Course {
   title: string;
   description: string;
   progress: number;
   key: string;
 }
+
 const Course = [
   {
     title: "Introduction to web",
@@ -30,7 +32,7 @@ const Course = [
       "https://img.freepik.com/free-vector/app-development-banner_33099-1720.jpg",
   },
 ];
-// const additionalCourses: Course[] = [//   {//     title: "HTML & CSS: Module 1",//     description: "Build single web page applications",//     key: "3",//     progress: 0,//   },//   {//     title: "HTML & CSS: Module 2",//     description: "Build multi-page web applications",//     progress: 0,//     key: "4",//   },//   {//     title: "HTML & CSS: Module 3",//     description: "Web design for social",//     progress: 0,//     key: "5",//   },// ];
+
 const WebDevelopment: React.FC = () => {
   return (
     <Layout className={styles.layout}>

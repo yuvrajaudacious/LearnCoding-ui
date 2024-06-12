@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react";
+import { RobotOutlined, SendOutlined, UserOutlined } from "@ant-design/icons";
 import {
-  Modal,
-  Button,
-  Input,
-  Typography,
   Avatar,
-  Form,
+  Button,
   Card,
-  Row,
   Col,
+  Form,
+  Input,
+  Modal,
+  Row,
   Skeleton,
+  Typography,
   message,
 } from "antd";
-import { SendOutlined, RobotOutlined, UserOutlined } from "@ant-design/icons";
+import React, { useEffect, useState } from "react";
 import styles from "./styles.module.less";
 
 const { Text } = Typography;
@@ -33,13 +33,11 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [showContactForm, setShowContactForm] = useState(false);
-  const [showEmailForm, setShowEmailForm] = useState(false);
   const [showServiceCards, setShowServiceCards] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isContactFormLoading, setIsContactFormLoading] = useState(false);
   const [isServiceCardsLoading, setIsServiceCardsLoading] = useState(false);
   const [contactForm] = Form.useForm();
-  const [emailForm] = Form.useForm();
 
   const quickReplies = ["Services", "Solutions", "Plane Issue", "Contact"];
 
@@ -149,7 +147,6 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
           "user"
         );
         setShowContactForm(false);
-        setShowEmailForm(true);
         setTimeout(() => {
           setMessages((prevMessages) => [
             ...prevMessages,

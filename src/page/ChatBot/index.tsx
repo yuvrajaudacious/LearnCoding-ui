@@ -188,7 +188,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
   }
 
   return (
-    <Card className={styles.chatboxss}>
+    <div className={styles.chatboxss}>
       <Modal
         title={
           <div>
@@ -343,7 +343,7 @@ const Chatbot: React.FC<ChatbotProps> = ({ visible, onClose }) => {
           />
         </div>
       </Modal>
-    </Card>
+    </div>
   );
 };
 

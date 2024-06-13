@@ -2,7 +2,6 @@ import { MailOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Card, Flex, Form, Input, Result, Space, message } from "antd";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.less";
-import { useForm } from "antd/es/form/Form";
 
 export default function Contact() {
   interface ContactForm {
@@ -38,7 +37,7 @@ export default function Contact() {
           key: "updatable",
           duration: 2,
         });
-        const form = document.querySelector("form");
+        const form: any = document.querySelector("form");
         form.reset();
         setShowSuccessCard(true);
       } else {
@@ -58,7 +57,7 @@ export default function Contact() {
     if (showSuccessCard) {
       const timeoutId = setTimeout(() => {
         setShowSuccessCard(false);
-      }, 1000000);
+      }, 5000);
 
       return () => clearTimeout(timeoutId);
     }

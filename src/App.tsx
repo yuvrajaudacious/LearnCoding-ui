@@ -40,7 +40,7 @@ const App: React.FC = () => {
   // }, []); // Empty dependency array to run only once after initial render
 
   return (
-    <div>
+    <>
       <Layout />
       <FloatButton.Group
         trigger="click"
@@ -59,7 +59,7 @@ const App: React.FC = () => {
       </FloatButton.Group>
       <Login visible={isLoginModalVisible} onClose={handleCloseLoginModal} />
       <Chatbot visible={isChatbotVisible} onClose={handleCloseChatbot} />{" "}
-    </div>
+    </>
   );
 };
 

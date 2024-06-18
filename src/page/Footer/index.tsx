@@ -6,7 +6,6 @@ import {
   LinkedinOutlined,
 } from "@ant-design/icons";
 import styles from "./styles.module.less";
-import { Link } from "react-router-dom";
 
 const { Footer } = Layout;
 const { Title, Text } = Typography;

@@ -71,7 +71,7 @@ const CustomFooter = () => {
             <Title level={4} style={{ color: "#fff" }}>
               Blog
             </Title>
-            <Link style={{ color: "#fff" }} to={""}>What is jQuery</Link>
+            <Text style={{ color: "#fff" }}>What is jQuery</Text>
             <br />
             <Text style={{ color: "#fff" }}>What is JavaScript</Text>
             <br />

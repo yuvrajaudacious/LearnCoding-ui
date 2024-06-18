@@ -6,6 +6,7 @@ import {
   LinkedinOutlined,
 } from "@ant-design/icons";
 import styles from "./styles.module.less";
+import { Link } from "react-router-dom";
 
 const { Footer } = Layout;
 const { Title, Text } = Typography;
@@ -15,7 +16,10 @@ const CustomFooter = () => {
     <Card className={styles.card}>
       <Footer className={styles.customFooter}>
         <Card className={styles.promoSection}>
-          <img className={styles.image} src="https://developer.android.com/static/images/shared/pointing-1.gif"></img>
+          <img
+            className={styles.image}
+            src="https://developer.android.com/static/images/shared/pointing-1.gif"
+          ></img>
           <Text className={styles.promoSectiontext}>Start learning now</Text>
           <br></br>
           <Text className={styles.promoSectiontextR}>
@@ -67,7 +71,7 @@ const CustomFooter = () => {
             <Title level={4} style={{ color: "#fff" }}>
               Blog
             </Title>
-            <Text style={{ color: "#fff" }}>What is jQuery</Text>
+            <Link style={{ color: "#fff" }} to={""}>What is jQuery</Link>
             <br />
             <Text style={{ color: "#fff" }}>What is JavaScript</Text>
             <br />
